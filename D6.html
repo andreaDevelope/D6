@@ -183,6 +183,7 @@
       /* ESERCIZIO 10
          Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
         */
+
       const footer = document.querySelector("footer");
       const footerLink = document.querySelector("a:last-child");
       const revealFooterLink = function (param1, param2) {
@@ -311,8 +312,30 @@
       /* EXTRA ESERCIZIO 15
         Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
       */
-
-      const changeColorWithRandom = function () {};
+      const h2 = document.querySelector("h2");
+      const changeColorWithRandom = function (param) {
+        // let arr = [1, 2, 3, 4, 5];
+        for (let i = 0; i < 10; i++) {
+          const numRnd = Math.ceil(Math.random() * 6);
+          switch (numRnd) {
+            case 1:
+              h2.style.color = "red";
+              break;
+            case 2:
+              h2.style.color = "blue";
+            case 3:
+              h2.style.color = "yellow";
+              break;
+            case 4:
+              h2.style.color = "green";
+              break;
+            case 5:
+              h2.style.color = "orange";
+              break;
+          }
+        }
+      };
+      setInterval(changeColorWithRandom, 2000);
     </script>
   </body>
 </html>
